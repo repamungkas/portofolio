@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, CheckCircle, AlertCircle, Loader2, MapPin, Phone } from "lucide-react";
+import { Mail, Send, CheckCircle, AlertCircle, Loader2, MapPin } from "lucide-react";
 import { LinkedinIcon } from "@/components/icons/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -57,12 +57,6 @@ export function Contact() {
       label: "Location",
       value: "Tangerang, Indonesia",
       href: null,
-    },
-    {
-      icon: Phone,
-      label: "Phone / WhatsApp",
-      value: "+62 822 5753 7871",
-      href: "tel:+6282257537871",
     },
   ];
 

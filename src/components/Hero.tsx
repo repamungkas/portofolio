@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Network, Mail, ArrowRight, MapPin } from "lucide-react";
+import { Mail, ArrowRight, MapPin } from "lucide-react";
 import { LinkedinIcon } from "@/components/icons/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -278,14 +278,6 @@ export function Hero() {
                 whileHover={{ scale: 1.1, rotate: 3 }}
               >
                 <Mail className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors" />
-              </motion.div>
-            </a>
-            <a href="https://wa.me/6282257537871" target="_blank" rel="noopener noreferrer" className="group">
-              <motion.div
-                className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-dark-100 flex items-center justify-center transition-all duration-300 group-hover:bg-primary-600"
-                whileHover={{ scale: 1.1, rotate: 3 }}
-              >
-                <Network className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-white transition-colors" />
               </motion.div>
             </a>
           </div>
