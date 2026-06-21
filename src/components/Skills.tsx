@@ -1,53 +1,55 @@
 "use client";
 
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Card } from "@/components/ui/Card";
 
 const skills = [
-  // Frontend
-  { category: "Frontend", color: "from-blue-500 to-cyan-500", items: [
-    { name: "Next.js", level: 95 },
-    { name: "React", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Tailwind CSS", level: 95 },
-    { name: "Framer Motion", level: 85 },
-    { name: "Vue.js", level: 75 },
-  ]},
-  // Backend
-  { category: "Backend", color: "from-green-500 to-emerald-500", items: [
-    { name: "Node.js", level: 90 },
-    { name: "PostgreSQL", level: 85 },
-    { name: "Prisma ORM", level: 85 },
-    { name: "Redis", level: 80 },
-    { name: "GraphQL", level: 75 },
-    { name: "REST APIs", level: 90 },
-  ]},
-  // Tools & DevOps
-  { category: "Tools & DevOps", color: "from-purple-500 to-pink-500", items: [
-    { name: "Git/GitHub", level: 95 },
-    { name: "Docker", level: 80 },
-    { name: "Vercel/AWS", level: 85 },
-    { name: "CI/CD", level: 80 },
-    { name: "Testing (Jest/Vitest)", level: 80 },
-    { name: "Figma", level: 70 },
-  ]},
-  // Soft Skills
-  { category: "Core Competencies", color: "from-orange-500 to-red-500", items: [
-    { name: "Problem Solving", level: 95 },
-    { name: "System Design", level: 85 },
-    { name: "Code Review", level: 90 },
-    { name: "Mentoring", level: 80 },
-    { name: "Agile/Scrum", level: 85 },
-    { name: "Technical Writing", level: 75 },
-  ]},
+  {
+    category: "Monitoring Tools",
+    color: "from-blue-500 to-cyan-500",
+    items: [
+      { name: "Zabbix", level: 95 },
+      { name: "PRTG", level: 85 },
+      { name: "Grafana", level: 80 },
+      { name: "The Dude", level: 75 },
+    ],
+  },
+  {
+    category: "Network Infrastructure",
+    color: "from-green-500 to-emerald-500",
+    items: [
+      { name: "Mikrotik RouterOS", level: 90 },
+      { name: "Cisco", level: 80 },
+      { name: "Routing & Switching", level: 85 },
+      { name: "Wireless", level: 75 },
+    ],
+  },
+  {
+    category: "Operating Systems",
+    color: "from-purple-500 to-pink-500",
+    items: [
+      { name: "Linux", level: 80 },
+      { name: "Windows Server", level: 75 },
+      { name: "Synology NAS", level: 70 },
+    ],
+  },
+  {
+    category: "Core Competencies",
+    color: "from-orange-500 to-red-500",
+    items: [
+      { name: "Troubleshooting", level: 95 },
+      { name: "Incident Management", level: 90 },
+      { name: "SLA Compliance", level: 90 },
+      { name: "Documentation", level: 85 },
+    ],
+  },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 sm:py-32 px-6 bg-white dark:bg-dark-300">
+    <section id="skills" className="py-24 sm:py-32 px-4 sm:px-6 bg-gray-50 dark:bg-dark-200/50">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           className="text-center max-w-3xl mx-auto mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -58,17 +60,16 @@ export function Skills() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
             Technical Arsenal
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-balance mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance mb-4">
             Skills & <span className="text-primary-600 dark:text-primary-400">Expertise</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            A curated stack built through years of shipping production applications.
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            A focused skill set built through years of hands-on experience in 24/7 network operations.
             Always expanding, always refining.
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
           {skills.map((category, catIndex) => (
             <motion.div
               key={category.category}
@@ -77,16 +78,14 @@ export function Skills() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 * catIndex }}
             >
-              <Card variant="elevated" hover className="h-full p-6">
-                {/* Category Header */}
+              <Card variant="elevated" hover className="h-full p-5 sm:p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0`}>
                     <span className="text-white font-bold text-sm">{category.category.slice(0, 2).toUpperCase()}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{category.category}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white leading-tight">{category.category}</h3>
                 </div>
 
-                {/* Skill Bars */}
                 <div className="space-y-5">
                   {category.items.map((skill, skillIndex) => (
                     <SkillBar
@@ -103,16 +102,15 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Tech Cloud - Floating Tags */}
         <motion.div
-          className="mt-16 relative"
+          className="mt-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <h3 className="text-center text-lg font-medium text-gray-600 dark:text-gray-400 mb-8">
-            Also Comfortable With
+            Also Familiar With
           </h3>
           <TechCloud />
         </motion.div>
@@ -121,19 +119,9 @@ export function Skills() {
   );
 }
 
-// Animated Skill Bar Component
 function SkillBar({ name, level, color, delay }: { name: string; level: number; color: string; delay: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const width = useTransform(scrollYProgress, [0, 1], [`${level}%`, `${level}%`]);
-
-  // Animate on scroll into view
-  useEffect(() => {
-    if (isInView) {
-      // Trigger animation via CSS
-    }
-  }, [isInView]);
 
   return (
     <motion.div ref={ref} className="group">
@@ -143,13 +131,11 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
       </div>
       <div className="h-2 bg-gray-100 dark:bg-dark-100 rounded-full overflow-hidden relative">
         <motion.div
-          className="h-full rounded-full relative"
-          style={{ background: `linear-gradient(to right, ${color.replace("from-", "").replace(" to-", ", ")})` }}
+          className={`h-full rounded-full bg-gradient-to-r ${color} relative`}
           initial={{ width: 0 }}
           animate={{ width: isInView ? `${level}%` : 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 15, delay }}
         >
-          {/* Glow effect */}
           <motion.div
             className="absolute top-0 right-0 w-4 h-full bg-white/30 rounded-full"
             initial={{ opacity: 0 }}
@@ -162,27 +148,24 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
   );
 }
 
-// Floating Tech Cloud
 function TechCloud() {
   const techs = [
-    "GraphQL", "WebSockets", "WebRTC", "Three.js", "D3.js",
-    "Storybook", "Playwright", "Cypress", "ESLint", "Prettier",
-    "Husky", "Lint-staged", "Commitlint", "Semantic Release",
-    "Kubernetes", "Terraform", "NGINX", "Cloudflare", "Supabase",
-    "Firebase", "Auth0", "NextAuth", "Zod", "React Hook Form",
-    "TanStack Query", "Zustand", "Jotai", "Valibot", "ArkType"
+    "BGP", "OSPF", "VPN", "VLAN", "NAT", "Firewall", "SNMP", "SSH",
+    "Telnet", "Wireshark", "Ping", "Traceroute", "DHCP", "DNS",
+    "Smart Tracker", "Ticketing Systems", "Bash Scripting", "SLA Reporting",
+    "Incident Response", "Network Documentation", "ISP Infrastructure",
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
       {techs.map((tech, i) => (
         <motion.span
           key={tech}
-          className="px-4 py-1.5 rounded-full bg-gray-100 dark:bg-dark-100 text-gray-700 dark:text-gray-300 text-sm font-medium border border-gray-200 dark:border-dark-200 hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 cursor-default"
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.05 * i }}
-          whileHover={{ scale: 1.05, y: -2, boxShadow: "0 4px 12px rgba(14, 165, 233, 0.3)" }}
+          className="px-3 sm:px-4 py-1.5 rounded-full bg-gray-100 dark:bg-dark-100 text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium border border-gray-200 dark:border-dark-200 hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 cursor-default"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.04 * i }}
+          whileHover={{ scale: 1.05, y: -2 }}
         >
           {tech}
         </motion.span>

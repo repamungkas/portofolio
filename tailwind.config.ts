@@ -11,14 +11,14 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          900: "#0c4a6e",
+          50: "#f0fdfa",
+          100: "#ccfbf1",
+          300: "#5eead4",
+          400: "#2dd4bf",
+          500: "#14b8a6",
+          600: "#0d9488",
+          700: "#0f766e",
+          900: "#134e4a",
         },
         dark: {
           100: "#1e293b",
@@ -35,6 +35,7 @@ const config: Config = {
         "slide-up": "slideUp 0.6s ease-out",
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulseGlow 2s ease-in-out infinite",
+        "marquee": "marquee 30s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -50,8 +51,12 @@ const config: Config = {
           "50%": { transform: "translateY(-20px)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(14, 165, 233, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(14, 165, 233, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(20, 184, 166, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(20, 184, 166, 0.6)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },

@@ -3,15 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Code, Briefcase, User, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { Menu, X, Sun, Moon, Briefcase, User, Mail, Code } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons/BrandIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { href: "#about", label: "About", icon: User },
+  { href: "#experience", label: "Experience", icon: Briefcase },
   { href: "#skills", label: "Skills", icon: Code },
-  { href: "#projects", label: "Projects", icon: Briefcase },
+  { href: "#projects", label: "Projects", icon: Code },
   { href: "#contact", label: "Contact", icon: Mail },
 ];
 
@@ -43,9 +44,9 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <Link href="#" className="font-display text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+          <Link href="#" className="font-display text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
             <Code className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-            <span>Portfolio</span>
+            <span>Resa<span className="text-primary-600 dark:text-primary-400">.</span></span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -114,11 +115,11 @@ export function Navbar() {
                   );
                 })}
                 <div className="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-dark-100">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="GitHub">
-                    <GithubIcon className="w-6 h-6" />
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                  <a href="https://linkedin.com/in/repamungkas" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
                     <LinkedinIcon className="w-6 h-6" />
+                  </a>
+                  <a href="mailto:pamungkas.re@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="Email">
+                    <Mail className="w-6 h-6" />
                   </a>
                 </div>
               </div>

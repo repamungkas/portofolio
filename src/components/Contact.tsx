@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, CheckCircle, AlertCircle, Loader2, MapPin, Phone } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterXIcon } from "@/components/icons/BrandIcons";
+import { LinkedinIcon } from "@/components/icons/BrandIcons";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
@@ -46,23 +46,49 @@ export function Contact() {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "hello@developer.dev", href: "mailto:hello@developer.dev" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA", href: null },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
+    {
+      icon: Mail,
+      label: "Email",
+      value: "pamungkas.re@gmail.com",
+      href: "mailto:pamungkas.re@gmail.com",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Tangerang, Indonesia",
+      href: null,
+    },
+    {
+      icon: Phone,
+      label: "Phone / WhatsApp",
+      value: "+62 822 5753 7871",
+      href: "tel:+6282257537871",
+    },
   ];
 
   const socialLinks = [
-    { icon: GithubIcon, label: "GitHub", href: "https://github.com", color: "hover:text-gray-400" },
-    { icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com", color: "hover:text-blue-400" },
-    { icon: TwitterXIcon, label: "Twitter", href: "https://twitter.com", color: "hover:text-sky-400" },
-    { icon: Mail, label: "Email", href: "mailto:hello@developer.dev", color: "hover:text-green-400" },
+    {
+      icon: LinkedinIcon,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/repamungkas",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      href: "mailto:pamungkas.re@gmail.com",
+      color: "hover:text-green-400",
+    },
   ];
 
   return (
-    <section id="contact" className="py-24 sm:py-32 px-6 bg-white dark:bg-dark-300 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`
-      }} />
+    <section id="contact" className="py-24 sm:py-32 px-4 sm:px-6 bg-gray-50 dark:bg-dark-200/50 relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -75,24 +101,26 @@ export function Contact() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
             Let&apos;s Connect
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-balance mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-balance mb-4">
             Get In <span className="text-primary-600 dark:text-primary-400">Touch</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            Have a project in mind? Want to collaborate? Or just say hi? I&apos;d love to hear from you.
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            Interested in working together or have a network challenge? I&apos;d love to hear from you.
             I typically respond within 24 hours.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card variant="elevated" className="p-8 h-full">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Let&apos;s Start a Conversation</h3>
+            <Card variant="elevated" className="p-6 sm:p-8 h-full">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-8">
+                Contact Information
+              </h3>
 
               <div className="space-y-6 mb-10">
                 {contactInfo.map((item, i) => (
@@ -109,7 +137,10 @@ export function Contact() {
                     <div>
                       <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <a
+                          href={item.href}
+                          className="text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors break-all"
+                        >
                           {item.value}
                         </a>
                       ) : (
@@ -121,7 +152,7 @@ export function Contact() {
               </div>
 
               <div>
-                <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">Follow Me</p>
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4">Connect With Me</p>
                 <div className="flex gap-4">
                   {socialLinks.map((social, i) => (
                     <motion.a
@@ -129,7 +160,7 @@ export function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-12 h-12 rounded-xl bg-gray-100 dark:bg-dark-100 flex items-center justify-center text-gray-600 dark:text-gray-300 transition-all duration-300 group ${social.color} dark:text-gray-300`}
+                      className={`w-12 h-12 rounded-xl bg-gray-100 dark:bg-dark-100 flex items-center justify-center text-gray-600 dark:text-gray-300 transition-all duration-300 ${social.color}`}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 * i }}
@@ -150,8 +181,8 @@ export function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card variant="elevated" className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+            <Card variant="elevated" className="p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -161,7 +192,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     error={errors.name}
-                    placeholder="John Doe"
+                    placeholder="Your name"
                     icon={<Mail className="w-5 h-5" />}
                   />
                   <FormField
@@ -171,7 +202,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     error={errors.email}
-                    placeholder="john@example.com"
+                    placeholder="your@email.com"
                     icon={<Mail className="w-5 h-5" />}
                   />
                 </div>
@@ -182,7 +213,7 @@ export function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   error={errors.subject}
-                  placeholder="Project Inquiry"
+                  placeholder="Job opportunity / Collaboration"
                   icon={<Mail className="w-5 h-5" />}
                 />
 
@@ -202,7 +233,7 @@ export function Contact() {
                           ? "border-red-500 focus:border-red-500"
                           : "border-gray-200 dark:border-dark-100 hover:border-gray-300 dark:hover:border-dark-200"
                       }`}
-                      placeholder="Tell me about your project, idea, or just say hi..."
+                      placeholder="Tell me about your project or opportunity..."
                     />
                     {errors.message && (
                       <motion.span
@@ -279,9 +310,7 @@ function FormField({
         {label}
       </label>
       <div className="relative">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-          {icon}
-        </div>
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">{icon}</div>
         <input
           type={type}
           id={name}

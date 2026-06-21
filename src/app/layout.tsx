@@ -19,30 +19,27 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Full-Stack Developer",
-    template: "%s | Portfolio",
+    default: "Resa Pamungkas | Network Engineer",
+    template: "%s | Resa Pamungkas",
   },
-  description: "Full-stack developer crafting performant, accessible, and delightful web applications. Specialized in Next.js, TypeScript, React, and modern web technologies.",
-  keywords: ["Full-Stack Developer", "Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Node.js", "PostgreSQL", "Portfolio"],
-  authors: [{ name: "Developer" }],
-  creator: "Developer",
-  publisher: "Portfolio",
+  description: "Network Operation Center (NOC) Engineer with 3+ years of experience monitoring, maintaining, and troubleshooting network systems. Skilled in Zabbix, Grafana, Mikrotik RouterOS, and Cisco infrastructure.",
+  keywords: ["NOC Engineer", "Network Engineer", "Zabbix", "Grafana", "Mikrotik", "Cisco", "PRTG", "Network Monitoring", "Indonesia"],
+  authors: [{ name: "Resa Putra Agung Pamungkas" }],
+  creator: "Resa Putra Agung Pamungkas",
+  publisher: "Resa Pamungkas",
   robots: "index, follow",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://portfolio.dev",
-    title: "Portfolio | Full-Stack Developer",
-    description: "Full-stack developer crafting performant, accessible, and delightful web applications.",
-    siteName: "Portfolio",
+    locale: "id_ID",
+    url: "https://repamungkas.dev",
+    title: "Resa Pamungkas | Network Engineer",
+    description: "NOC Engineer with 3+ years monitoring and troubleshooting network systems 24/7.",
+    siteName: "Resa Pamungkas Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Full-Stack Developer",
-    description: "Full-stack developer crafting performant, accessible, and delightful web applications.",
-  },
-  verification: {
-    google: "google-site-verification-code",
+    title: "Resa Pamungkas | Network Engineer",
+    description: "NOC Engineer with 3+ years monitoring and troubleshooting network systems 24/7.",
   },
 };
 
