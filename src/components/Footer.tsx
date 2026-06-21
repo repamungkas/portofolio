@@ -19,7 +19,6 @@ export function Footer() {
     Connect: [
       { label: "LinkedIn", href: "https://linkedin.com/in/repamungkas" },
       { label: "Email", href: "mailto:pamungkas.re@gmail.com" },
-      { label: "WhatsApp", href: "https://wa.me/6282257537871" },
     ],
   };
 
