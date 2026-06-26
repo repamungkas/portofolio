@@ -35,7 +35,6 @@ const config: Config = {
         "slide-up": "slideUp 0.6s ease-out",
         "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulseGlow 2s ease-in-out infinite",
-        "marquee": "marquee 30s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -53,10 +52,6 @@ const config: Config = {
         pulseGlow: {
           "0%, 100%": { boxShadow: "0 0 20px rgba(20, 184, 166, 0.3)" },
           "50%": { boxShadow: "0 0 40px rgba(20, 184, 166, 0.6)" },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
         },
       },
     },
