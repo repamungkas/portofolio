@@ -3,17 +3,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Briefcase, User, Mail, Code } from "lucide-react";
+import { Menu, X, Sun, Moon, Mail, Code } from "lucide-react";
 import { LinkedinIcon } from "@/components/icons/BrandIcons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { href: "#about", label: "About", icon: User },
-  { href: "#experience", label: "Experience", icon: Briefcase },
-  { href: "#skills", label: "Skills", icon: Code },
-  { href: "#projects", label: "Projects", icon: Code },
-  { href: "#contact", label: "Contact", icon: Mail },
+  { href: "#about",      label: "About"      },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills",     label: "Skills"     },
+  { href: "#projects",   label: "Projects"   },
+  { href: "#contact",    label: "Contact"    },
 ];
 
 export function Navbar() {
@@ -50,25 +50,21 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors relative group"
-                >
-                  <Icon className="w-4 h-4" aria-hidden="true" />
-                  {link.label}
-                  <motion.span
-                    className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-primary-500 origin-center"
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                </Link>
-              );
-            })}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors relative group"
+              >
+                {link.label}
+                <motion.span
+                  className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-primary-500 origin-center"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
+              </Link>
+            ))}
             <Button variant="ghost" size="sm" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Toggle theme">
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </Button>
@@ -100,20 +96,16 @@ export function Navbar() {
               transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col gap-4 pt-4">
-                {navLinks.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="flex items-center gap-3 px-2 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-dark-100"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      <Icon className="w-5 h-5" aria-hidden="true" />
-                      <span className="font-medium">{link.label}</span>
-                    </Link>
-                  );
-                })}
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center px-2 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-dark-100 font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
                 <div className="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-dark-100">
                   <a href="https://linkedin.com/in/repamungkas" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
                     <LinkedinIcon className="w-6 h-6" />
