@@ -90,9 +90,9 @@ export function Experience() {
                 transition={{ duration: 0.6, delay: 0.1 * i }}
               >
                 {/* Timeline dot */}
-                <div className={`absolute left-0 sm:left-[6px] top-6 w-8 h-8 rounded-full border-4 border-gray-50 dark:border-dark-200 flex items-center justify-center -translate-y-1/2 ${
+                <div className={`absolute left-0 sm:left-[6px] top-6 w-8 h-8 rounded-full flex items-center justify-center -translate-y-1/2 ${
                   exp.current
-                    ? "bg-primary-500"
+                    ? "bg-primary-500 border-4 border-gray-50 dark:border-dark-200"
                     : "bg-white dark:bg-dark-100 border-2 border-gray-300 dark:border-dark-100"
                 }`}>
                   <Briefcase className={`w-3.5 h-3.5 ${exp.current ? "text-white" : "text-gray-400"}`} />

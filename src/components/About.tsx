@@ -33,6 +33,7 @@ export function About() {
                 alt="Resa Putra Agung Pamungkas"
                 width={400}
                 height={480}
+                sizes="(min-width: 1024px) 480px, 100vw"
                 className="rounded-2xl shadow-lg object-cover w-full max-w-sm lg:max-w-none"
                 onError={() => setImgError(true)}
                 priority
